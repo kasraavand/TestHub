@@ -1,0 +1,32 @@
+{% extends 'orchestrator/base.html' %}
+
+{% block content %}
+  <h1 class="page-header" style="color:black;">
+    Tests
+    <small style="color:black;">{% block title %}{% endblock %}</small>
+  </h1>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">States</h3>
+        </div>
+        <div class="list-group">
+          <a href="{% url 'filtered_request' request_type='Finished' page=1 %}" class="list-group-item{% if request.path == '/finished/' %} active{% endif %}">
+            Finished
+          </a>
+          <a href="{% url 'filtered_request' request_type='Running'  page=1 %}" class="list-group-item{% if request.path == '/in-progress/' %} active{% endif %}">
+            In progress
+          </a>
+          <a href="{% url 'filtered_request' request_type='Failed'  page=1 %}" class="list-group-item{% if request.path == '/failed/' %} active{% endif %}">
+            Failed
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      {% block requests_content %}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}

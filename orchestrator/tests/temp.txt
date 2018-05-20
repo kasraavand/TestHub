@@ -1,0 +1,134 @@
+factorial ()
+Doctest: factorial ... ok
+factorial (factorial)
+Doctest: factorial.factorial ... FAIL
+docs/doctest_in_help.txt
+Doctest: doctest_in_help.txt ... FAIL
+
+======================================================================
+FAIL: factorial (factorial)
+Doctest: factorial.factorial
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for factorial.factorial
+  File "/home/kasra/testhub/orchestrator/tests/factorial.py", line 10, in factorial
+
+----------------------------------------------------------------------
+File "/home/kasra/testhub/orchestrator/tests/factorial.py", line 15, in factorial.factorial
+Failed example:
+    factorial(30)
+Expected:
+    265252859812191058636308480000000
+Got:
+    265252859812191058636308480000000L
+----------------------------------------------------------------------
+File "/home/kasra/testhub/orchestrator/tests/factorial.py", line 27, in factorial.factorial
+Failed example:
+    factorial(30.0)
+Expected:
+    265252859812191058636308480000000
+Got:
+    265252859812191058636308480000000L
+
+
+======================================================================
+FAIL: docs/doctest_in_help.txt
+Doctest: doctest_in_help.txt
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for doctest_in_help.txt
+  File "docs/doctest_in_help.txt", line 0
+
+----------------------------------------------------------------------
+File "docs/doctest_in_help.txt", line 13, in doctest_in_help.txt
+Failed example:
+    factorial(30)
+Expected:
+    265252859812191058636308480000000
+Got:
+    265252859812191058636308480000000L
+----------------------------------------------------------------------
+File "docs/doctest_in_help.txt", line 25, in doctest_in_help.txt
+Failed example:
+    factorial(30.0)
+Expected:
+    265252859812191058636308480000000
+Got:
+    265252859812191058636308480000000L
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+FAILED (failures=2)
+factorial ()
+Doctest: factorial ... ok
+factorial (factorial)
+Doctest: factorial.factorial ... FAIL
+docs/doctest_in_help.txt
+Doctest: doctest_in_help.txt ... FAIL
+
+======================================================================
+FAIL: factorial (factorial)
+Doctest: factorial.factorial
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for factorial.factorial
+  File "/home/kasra/testhub/orchestrator/tests/factorial.py", line 10, in factorial
+
+----------------------------------------------------------------------
+File "/home/kasra/testhub/orchestrator/tests/factorial.py", line 15, in factorial.factorial
+Failed example:
+    factorial(30)
+Expected:
+    265252859812191058636308480000000
+Got:
+    265252859812191058636308480000000L
+----------------------------------------------------------------------
+File "/home/kasra/testhub/orchestrator/tests/factorial.py", line 27, in factorial.factorial
+Failed example:
+    factorial(30.0)
+Expected:
+    265252859812191058636308480000000
+Got:
+    265252859812191058636308480000000L
+
+
+======================================================================
+FAIL: docs/doctest_in_help.txt
+Doctest: doctest_in_help.txt
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for doctest_in_help.txt
+  File "docs/doctest_in_help.txt", line 0
+
+----------------------------------------------------------------------
+File "docs/doctest_in_help.txt", line 13, in doctest_in_help.txt
+Failed example:
+    factorial(30)
+Expected:
+    265252859812191058636308480000000
+Got:
+    265252859812191058636308480000000L
+----------------------------------------------------------------------
+File "docs/doctest_in_help.txt", line 25, in doctest_in_help.txt
+Failed example:
+    factorial(30.0)
+Expected:
+    265252859812191058636308480000000
+Got:
+    265252859812191058636308480000000L
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+FAILED (failures=2)

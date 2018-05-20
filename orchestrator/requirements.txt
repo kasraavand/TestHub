@@ -1,0 +1,43 @@
+### Techs ###
+Python-3.5
+Django-2.0
+/installed with pip3 install django
+psycopg-2
+/installed with: pip3 install psycopg2-binary
+
+
+
+### Techs ###
+
+### DataBase ###
+apt-get install postgresql
+apt-get install postgresql-client
+
+/go to /etc/postgresql/9.6/main/pg_hba.conf (the version might be different)
+/change the following line :
+
+# Database administrative login by Unix domain socket
+local   all             postgres                                peer
+
+/to:
+
+# Database administrative login by Unix domain socket
+local   all             postgres                                md5
+
+/restart the service by:
+service postgresql restart
+
+/run:
+psql -U postgres
+
+/enter a pasword for postgresql user and enter interactive shell
+/ create the testhub database user and cheange the privilages by following commands
+
+create database testhub;
+CREATE USER tester WITH PASSWORD 'test_password';
+GRANT ALL PRIVILEGES ON DATABASE "testhub" to tester;
+
+/quit the shell by \q
+
+### DataBase ###
+

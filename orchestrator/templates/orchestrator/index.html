@@ -1,0 +1,38 @@
+{% extends 'orchestrator/base_for_orchestrator.html' %}
+
+{% load static %}
+
+{% block title %}{{request.path}}{% endblock %}
+
+
+{% block requests_content %}
+
+{% if form %}
+<form action="{% url 'home' page=1%}" method="POST" enctype='multipart/form-data'>{% csrf_token %}
+  <div class="custom-select" style="width:200px;">
+      <li>{{ form.interface.label_tag }} {{ form.interface }}</li>
+  </div>
+<div class="custom-select" style="width:200px;">
+      <li>{{ form.environment.label_tag }} {{ form.environment }}</li>
+</div>
+<br>
+
+    <li>{{ form.file.label_tag }} {{ form.file }}</li>
+
+<div style="margin-bottom: 20px;">
+    <button type="submit" class="btn btn-success">
+        <span class="glyphicon glyphicon glyphicon-ok"></span> Submit
+      </button>
+    </div>  
+    </form>
+{% else %}
+<span> Please <a href = "{% url 'login'%}">LOGIN</a> to be able to add a test request!</span>
+
+{% endif %}
+{% if request_count %}
+{% include 'orchestrator/requests_list.html' %}
+{% else %}
+
+<p style="margin-top:50px;"> No request is submitted yet! Be the first one who submits one ;).</p>
+{% endif %}
+{% endblock %}

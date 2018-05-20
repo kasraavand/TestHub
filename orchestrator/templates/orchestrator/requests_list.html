@@ -1,0 +1,64 @@
+{% block table_content %}
+<!--<p> <b>{{ founded_results }} results founded</b> </p>-->
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Date</th>
+        <th>Requester</th>
+        <th>Interface</th>
+        <th>Environment</th>
+        <th>Files</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for record in page %}
+        {% if record is not None %}
+        {% if not request_type or record.state in request_type %}
+        <tr>
+          <td>{{ record.id }}</td>
+          <td>{{ record.request_date }}</td>
+          <td>{{ record.user }}</td>
+          <td>{{ record.get_interface_display }}</td>
+          <td>{{ record.get_environment_display }}</td>
+          <td>{{ record.file_names }}</td>
+          {% if record.state == 'Running' %}
+          <td style='color:cornflowerblue'>Running</td>
+          {% elif record.state == 'Finished'%}
+          <td><a href="{% url 'record_status' record_id=record.id %}" target="_blank" style='color: green;'><b>Successfull</b></a></td>
+          {% else %}
+          <td><a href="{% url 'record_status' record_id=record.id %}" target="_blank" style='color:red;'><b>Failed</b></a></td>
+          {% endif%}
+        </tr>
+        {% endif %}
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  {% if is_other_pages %}
+    <ul class="pagination">
+      {% if page.has_previous %}
+        <li><a href="/{{base}}/{{ page.previous_page_number }}"
+          onclick="return chagne_page()" id="change_page_id">&laquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+      {% endif %}
+      {% for i in page.page_range %}
+        {% if page.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li><a href="/{{base}}/{{ i }}" onclick="return chagne_page()" id="change_page_id">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if page.has_next %}
+        <li><a href="/{{base}}/{{ page.next_page_number }}"
+          onclick="return chagne_page()" id="change_page_id">&raquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+  {% endblock %}

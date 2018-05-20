@@ -1,0 +1,14 @@
+{% extends 'orchestrator/base.html' %}
+{% block content %}
+{% if warning %}
+<p style="color:red;"> {{ warning}} </p>
+{% else %}
+{% for record in failures %}
+{% for line in record%}
+<p>{{ line }}</p>
+{% endfor %}
+{% endfor %}
+<li> {{ errors }}</li>
+<li> {{ description }}</li>
+{% endif %}
+{% endblock %}

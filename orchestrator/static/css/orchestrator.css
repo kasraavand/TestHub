@@ -1,0 +1,118 @@
+.page-header {
+    background-color: rgb(0, 82, 129);
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #000000;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.page-header span{
+    font-family: 'Gloria Hallelujah', cursive;    
+    color: #04cdff;
+    font-size: 12pt;
+}
+#header_image {
+    margin: 0px 0px -350px 700px;
+}
+
+.suggest_server{
+    margin: 0 0 0 0;
+}
+
+.left-elements{
+
+    float: right;
+}
+.menu-bar {
+    margin-top: 50px;
+}
+
+.top-menu {
+    font-family: 'Spectral', serif;
+    color: #ffe602;
+    font-size: 10pt;
+    margin-right: 10px;
+}
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'IM Fell English SC', serif;
+}
+
+ /*the container must be positioned relative:*/
+ .custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  .custom-select select {
+    display: none; /*hide original SELECT element:*/
+  }
+  .select-selected {
+    background-color:rgb(0, 82, 129);
+  }
+  /*style the arrow inside the select element:*/
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  /*point the arrow upwards when the select box is open (active):*/
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  /*style the items (options), including the selected item:*/
+  .select-items div,.select-selected {
+    color: #ffd900;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  /*style items (options):*/
+  .select-items {
+    position: absolute;
+    background-color:rgb(0, 82, 129);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  /*hide the items when the select box is closed:*/
+  .select-hide {
+    display: none;
+  }
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  } 
+
+
+  .btn {
+    border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 14px 28px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+    background-color:rgb(0, 82, 129);} /* Green */
+
+
+    .custom-file-upload {
+        background: rgb(80, 134, 165);
+        color: #ffd900;
+        margin-bottom: 20px;
+        border: 1px solid rgb(0, 82, 129);
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+    }
+    
